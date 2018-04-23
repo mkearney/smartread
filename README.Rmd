@@ -1,0 +1,57 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+library(smartread)
+```
+# smartread
+
+The goal of smartread is to provide a single function API for reading in data from common file types.
+
+## Installation
+
+You can install the development version of **{smartread}** from [Github](https://github.com/mkearney/smartread) with:
+
+```{r, eval=FALSE}
+## install from github
+devtools::install_github("mkearney/smartread")
+```
+
+## Example
+
+This is a basic example which shows you how to use `read_smart()`
+
+```{r example}
+## basic example dat
+exdat <- datasets::mtcars
+
+## save as multiple different file types
+saveRDS(exdat, "exdat.rds")
+save(exdat, file = "exdat.rda")
+write.csv(exdat, "exdat.csv")
+
+## now read and view the .rds file
+head(c1 <- read_smart("exdat.rds"))
+
+## now read and view the .csv file
+head(c2 <- read_smart("exdat.csv"))
+
+## now read and view the .rda file
+head(c3 <- read_smart("exdat.rda"))
+```
+
+
+
+```{r, include=FALSE}
+## cleanup (delete) data files
+unlink(c("exdat.rds", "exdat.rda", "exdat.csv"))
+```
