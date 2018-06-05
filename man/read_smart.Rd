@@ -12,7 +12,8 @@ read_rda(x)
 \arguments{
 \item{x}{Name of file to read.}
 
-\item{...}{Other args passed on to read-in function, see details for more info.}
+\item{...}{Other args passed on to read-in function, see details for
+more info.}
 }
 \value{
 Info from file returned as R data object.
@@ -26,10 +27,18 @@ Reads in .rda files like any other data file would (outputs an object, which you
 Here is the function logic \itemize{
   \item csv = readr::read_csv
   \item rds = readRDS
-  \item rda = load
+  \item rda|Rdata = load
   \item xlsx = openxlsx::read.xlsx
   \item sav = haven::read_sav
   \item dta = haven::read_dta
+  \item tsv = read.delim
+  \item fst = fst::read_fst
+  \item dt|data.table = data.table::fred
+  \item txt|table = read.table
+  \item html = xml2::read_html
+  \item xml = xml2::read_xml
+  \item json = jsonlite::stream_in
+  \item yaml = yaml::read_yaml
 }
 }
 \examples{
