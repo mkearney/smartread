@@ -1,3 +1,6 @@
+^LICENSE\.md$
+^docs$
+^_pkgdown\.yml$
 ^smartread\.Rproj$
 ^\.Rproj\.user$
 ^README\.Rmd$
